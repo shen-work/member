@@ -1,3 +1,6 @@
 body{
     background: #555;
 }
+input[type=button]{
+    cursor: pointer;
+}
