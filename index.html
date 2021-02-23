@@ -2,18 +2,26 @@
 <meta name="viewport" content="width=device-width">
 <head>
 <title>會員系統</title>
-
+<link rel="stylesheet" href="style.css">
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 
 <script>
-var client_id = "506821759724-fq3jm7jq7llvnp7tqui2493kupkknvvp.apps.googleusercontent.com";
-
-
+var G = {};
+G.client_id = "506821759724-fq3jm7jq7llvnp7tqui2493kupkknvvp.apps.googleusercontent.com";
 
 window.onload = function(){
+    gapi.auth2.init({"client_id":client_id});
 
-    console.log(gapi);
+    G.gapi = gapi.auth2.getAuthInstance();
+
+    document.body.addEventListener("click",function(e){
+        if(e.target.id=="g_login")
+        {
+            G.gapi.signIn(); 
+        }
+    });
+
 }
 
 
@@ -23,18 +31,13 @@ window.onload = function(){
 
 
 
-
-
-
 </head>
-<link rel="stylesheet" href="style.css">
-
 
 
 
 
 <body>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <input type="button" id="login" value="登入google帳號">
 
 </body>
 
