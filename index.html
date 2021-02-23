@@ -11,9 +11,16 @@ var G = {};
 G.client_id = "506821759724-fq3jm7jq7llvnp7tqui2493kupkknvvp.apps.googleusercontent.com";
 
 window.onload = function(){
-    gapi.auth2.init({"client_id":client_id});
 
-    G.gapi = gapi.auth2.getAuthInstance();
+    gapi.load("auth2",function(){
+
+        gapi.auth2.init({"client_id":client_id});
+
+        G.gapi = gapi.auth2.getAuthInstance();
+
+
+    });
+    
 
     document.body.addEventListener("click",function(e){
         if(e.target.id=="g_login")
