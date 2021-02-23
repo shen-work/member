@@ -3,14 +3,9 @@
 <meta name="google-signin-client_id" content="856639483080-kmok597o75bun933gebh296jbvjt4ilo.apps.googleusercontent.com">
 <head>
 <title>會員系統</title>
-
-<script async defer src="https://apis.google.com/js/api.js"
-            onload="this.onload=function(){};GoogleClientInit()">
-    </script>
-<script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
-
 <script>
-    
+
+
 function GoogleClientInit() {
     //官網範例寫client:auth2，但本人實測由於待會要呼叫gapi.client.init而不是gapi.auth2.init，所以給client即可
     gapi.load('client', function () {
@@ -27,6 +22,16 @@ function GoogleClientInit() {
     });//end gapi.load
 }//end GoogleClientInit function
 
+
+</script>
+
+<script async defer src="https://apis.google.com/js/api.js"
+            onload="this.onload=function(){};GoogleClientInit()">
+    </script>
+<script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+
+<script>
+    
 function GoogleLogin() {
             let auth2 = gapi.auth2.getAuthInstance();//取得GoogleAuth物件
             auth2.signIn().then(function (GoogleUser) {
