@@ -23,11 +23,11 @@ window.onload = function(){
     
 
     document.body.addEventListener("click",function(e){
-        console.log(e);
         if(e.target.id=="g_login")
-        {
             G.gapi.signIn(); 
-        }
+        
+        if(e.target.id=="g_logout")
+            G.gapi.signOut();
     });
 
 }
@@ -46,7 +46,7 @@ window.onload = function(){
 
 <body>
     <input type="button" id="g_login" value="登入google帳號">
-
+    <input type="button" id="g_logout" value="登出google帳號">
 </body>
 
 
