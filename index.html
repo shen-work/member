@@ -1,54 +1,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width">
 <head>
-<title>會員系統</title>
-<link rel="stylesheet" href="style.css">
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-
-
-<script>
-var G = {};
-G.client_id = "506821759724-fq3jm7jq7llvnp7tqui2493kupkknvvp.apps.googleusercontent.com";
-
-window.onload = function(){
-
-    gapi.load("auth2",function(){
-
-        gapi.auth2.init({"client_id":G.client_id});
-
-        G.gapi = gapi.auth2.getAuthInstance();
-
-
-    });
-    
-
-    document.body.addEventListener("click",function(e){
-        if(e.target.id=="g_login")
-            G.gapi.signIn(); 
-        
-        if(e.target.id=="g_logout")
-            G.gapi.signOut();
-    });
-
-}
-
-
-
-</script>
-
-
-
-
+<title>網頁RPG</title>
 </head>
+<link rel="stylesheet" href="style.css">
+
+系統更新中
 
 
-
-
-<body>
-    <input type="button" id="g_login" value="登入google帳號">
-    <input type="button" id="g_logout" value="登出google帳號">
-</body>
-
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+<script src="script.js?t=0223"></script>
+<script src="job.js?t=0223"></script>
 
 
 
